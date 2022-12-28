@@ -31,7 +31,7 @@ export default function CellNumberSlider(){
                 (e) => 
                     {
                         let num = e.target.value;
-                        setValue(num); setCellNumber(num*num)
+                        setValue(num); setCellNumber(num)
                     }
                 }
             />

@@ -49,8 +49,8 @@ export default function Formula () {
                 <li>
                     ALIVE cells will still be alive
                     <div style={inputWrapperStyle}>
-                        if <input style={inputStyle} type="number" min="0" max="8"/>
-                        to <input style={inputStyle} type="number" min="0" max="8"/>
+                        if <input id='a2amin' style={inputStyle} type="number" min="0" max="8"/>
+                        to <input id='a2amax' style={inputStyle} type="number" min="0" max="8"/>
                         of their neighbours 
                     </div>
                     are ALIVE.
@@ -58,8 +58,8 @@ export default function Formula () {
                 <li>
                     DEAD cells will become alive
                     <div style={inputWrapperStyle}>
-                        if <input style={inputStyle} type="number" min="0" max="8"/>
-                        to <input style={inputStyle} type="number" min="0" max="8"/>
+                        if <input id='d2amin' style={inputStyle} type="number" min="0" max="8"/>
+                        to <input id='d2amax' style={inputStyle} type="number" min="0" max="8"/>
                         of their neighbours 
                     </div>
                     are ALIVE.

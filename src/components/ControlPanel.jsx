@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import aboutIcon from '../images/icon.png';
 import AlgoDescription from './Panel_ingame/AlgoDescription';
 import CellNumberSlider from './Panel_notingame/CellNumberSlider';
@@ -6,6 +6,8 @@ import Controls from './Panel_ingame/Controls';
 import StatTable from './Panel_ingame/StatTable';
 import Formula from './Panel_notingame/Formula';
 import InitialCondition from './Panel_notingame/InitialCondition';
+import { InGameContext } from "./AppContextProvider";
+
 
 // Styles
 const headerStyle = {
@@ -53,7 +55,24 @@ const confirmBtnStyle = {
 
 export default function ControlPanel(){
 
-    const [inGame, setInGame] = useState(false);
+    const { inGame, setInGame, setGameProps } = useContext(InGameContext);
+
+    const startGame = () => {
+
+        const gameProps = {
+            alive2alive: {
+                minimum: document.getElementById('a2amin').value,
+                maximum: document.getElementById('a2amax').value
+            },
+            dead2alive: {
+                minimum: document.getElementById('d2amin').value,
+                maximum: document.getElementById('d2amax').value
+            }
+        };
+
+        setInGame(true);
+        setGameProps(gameProps);
+    }
 
     return (
         <div>
@@ -91,7 +110,9 @@ export default function ControlPanel(){
                         <CellNumberSlider/>
                         <Formula/>
                         <InitialCondition/>
-                        <button style={confirmBtnStyle}>
+                        <button
+                            style={confirmBtnStyle}
+                            onClick={startGame}>
                             Confirm
                         </button>
                     </>

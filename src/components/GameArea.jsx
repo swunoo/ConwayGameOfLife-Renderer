@@ -88,7 +88,7 @@ export default function GameArea(){
                         key = {cellKey}
                         keyProp={cellKey}
                         cell_size = {cellSize}
-                        bg_color_dead = {'#000'}
+                        bg_color_dead = {'#333'}
                         bg_color_alive = {'#fff'}
                         currentState = {cellStates[cellKey]}
                         onClickHandler = {
@@ -131,7 +131,7 @@ export default function GameArea(){
                         key = {cellKey}
                         keyProp = {cellKey}
                         cell_size = {cellSize}
-                        bg_color_dead = {'#000'}
+                        bg_color_dead = {'#333'}
                         bg_color_alive = {'#fff'}
                         currentState = {false}
                         onClickHandler = {

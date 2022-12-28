@@ -24,7 +24,7 @@ export default function Cell({ cell_size, bg_color_dead, bg_color_alive, onClick
                 width: cell_size,
                 height: cell_size,
                 backgroundColor: cellColor,
-                border: '1px solid #777',
+                border: '1px solid #121212',
                 boxSizing: 'border-box'
             }}
             onClick={(e) =>{

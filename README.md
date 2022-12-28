@@ -17,5 +17,6 @@
     <h3>The Project</h3>
     <li>I wrote this while learning TypeScript and React.</li>
     <li>It was written in a day, on 2022 Dec 28, and the total development time is around 10 hours.</li>
-    <li>Please feel free to <a href="github.com/swunoo/ConwayGameOfLife-Renderer">view the code</a>. Thank you.</li>
+    <li>Code refactoring and documentation are yet to be done.</li>
+    <li>Please feel free to <a href="github.com/swunoo/ConwayGameOfLife-Renderer">view current code</a>. Thank you.</li>
 </ul>

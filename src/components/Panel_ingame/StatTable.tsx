@@ -9,6 +9,7 @@ const data = {
 }
 
 export default function StatTable(){
+
     return (
         <table className='statTable'>
             <tr>

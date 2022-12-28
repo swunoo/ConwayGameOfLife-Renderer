@@ -5,7 +5,7 @@ import Cell from "./Cell";
 
 export default function GameArea(){
 
-    const { inGame, gameProps, speed, cells, setCells } = useContext(InGameContext);
+    const { inGame, gameProps, speed, cells, setCells, playPause } = useContext(InGameContext);
 
     const [cellStates, setCellStates] = useState({}); // true (ALIVE), false (DEAD)
     const [cellSize, setCellSize] = useState();
@@ -21,7 +21,8 @@ export default function GameArea(){
 
     useEffect(() => {
         // Starts the game
-        if(!inGame) return;
+        if(!inGame || !playPause) return;
+
         let xPos, yPos;
 
         const cycle = setInterval(() => {
@@ -74,7 +75,7 @@ export default function GameArea(){
         return () => clearInterval(cycle)
 
         
-    }, [inGame, speed, gameProps])
+    }, [inGame, speed, gameProps, playPause])
 
     useEffect(() => {
         // renders

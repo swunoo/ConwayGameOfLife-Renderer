@@ -10,6 +10,7 @@ export default function AppContextProvider({ children }){
     const [gameProps, setGameProps] = useState({});
     const [speed, setSpeed] = useState(1000);
     const [cells, setCells] = useState([]);
+    const [playPause, setPlayPause] = useState(true);
 
     return (
         <CellNumberContext.Provider 
@@ -19,7 +20,8 @@ export default function AppContextProvider({ children }){
                     inGame, setInGame,
                     gameProps, setGameProps,
                     speed, setSpeed,
-                    cells, setCells
+                    cells, setCells,
+                    playPause, setPlayPause
                 }}>
                 { children }
             </InGameContext.Provider>

@@ -1,12 +1,13 @@
 import { useContext, useState } from 'react';
-import aboutIcon from '../images/icon.png';
+import infoBtn from '../images/infoBtn.svg';
 import AlgoDescription from './Panel_ingame/AlgoDescription';
 import CellNumberSlider from './Panel_notingame/CellNumberSlider';
-import Controls from './Panel_ingame/Controls';
+import Controls from './Panel_ingame/Controls.jsx';
 import StatTable from './Panel_ingame/StatTable';
 import Formula from './Panel_notingame/Formula';
 import InitialCondition from './Panel_notingame/InitialCondition';
 import { InGameContext } from "./AppContextProvider";
+import InfoModal from './InfoModal';
 
 
 // Styles
@@ -56,6 +57,7 @@ const confirmBtnStyle = {
 export default function ControlPanel(){
 
     const { inGame, setInGame, setGameProps } = useContext(InGameContext);
+    const [ infoModal, setInfoModal ] = useState(false);
 
     const startGame = () => {
 
@@ -76,9 +78,15 @@ export default function ControlPanel(){
 
     return (
         <div>
+            { infoModal && <InfoModal onCloseBtn = {() => setInfoModal(false)} /> }
             <header style={headerStyle}>
                 <p style={headerPStyle}>Visualize CGOL</p>
-                <img src={aboutIcon} alt='Go to About' className='iconImg'/>
+                <img 
+                    src={infoBtn}
+                    alt='Go to About'
+                    className='iconImg infoImg'
+                    onClick={() =>setInfoModal(true)}
+                />
             </header>
 
             <hr style={hrStyle} />
@@ -89,8 +97,8 @@ export default function ControlPanel(){
                     // Shows stats and controls while inGame.
                     inGame && (
                     <>
-                        <StatTable />
-                        <hr style={hrStyle} />
+                        {/* <StatTable />
+                        <hr style={hrStyle} /> */}
                         <Controls />
                         <hr style={hrStyle} />
                         <AlgoDescription />

@@ -26,12 +26,12 @@ footer {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-footer a {
+a {
   color: #ccc;
   margin: 0 1rem;
 }
 
-footer a:hover {
+a:hover {
   color: #fff;
 }
 
@@ -54,6 +54,9 @@ footer a:hover {
 
 .iconImg {
   max-width: 25px;
+}
+.infoImg:hover {
+  cursor: pointer;
 }
 
 /* Panel */

@@ -1,4 +1,4 @@
-# Visualization of "Conway Game of Life"
+# Visualization of "Conway's Game of Life"
 
 ![Game Screen](./game_screen.png)
 

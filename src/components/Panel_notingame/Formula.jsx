@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import '../../App.css'
 
 const resetBtnStyle = {
@@ -30,18 +31,32 @@ const inputStyle = {
     border: 'none',
     fontWeight: '800',
     fontSize: '1.1rem',
-    textAlign: 'center' as 'center'
+    textAlign: 'center'
 }
 
 export default function Formula () {
+
+    const resetFormula = () => {
+        document.getElementById('a2amin').value = '2';
+        document.getElementById('a2amax').value = '3';
+        document.getElementById('d2amin').value = '3';
+        document.getElementById('d2amax').value = '3';
+    }
+
+    useEffect(() => {
+        resetFormula();
+    }, [])
+
+
     return (
         <>
             <div className='notIngamePanelTitle'>
                 <h3>Formula</h3>
                 <button
                     style={resetBtnStyle}
+                    onClick={resetFormula}
                 >
-                    Reset
+                    Use Original Formula
                 </button>
             </div>
             
@@ -49,8 +64,12 @@ export default function Formula () {
                 <li>
                     ALIVE cells will still be alive
                     <div style={inputWrapperStyle}>
-                        if <input id='a2amin' style={inputStyle} type="number" min="0" max="8"/>
-                        to <input id='a2amax' style={inputStyle} type="number" min="0" max="8"/>
+                        if <input
+                            id='a2amin' style={inputStyle}
+                            type="number" min="0" max="8"/>
+                        to <input
+                            id='a2amax' style={inputStyle}
+                            type="number" min="0" max="8"/>
                         of their neighbours 
                     </div>
                     are ALIVE.
@@ -58,8 +77,12 @@ export default function Formula () {
                 <li>
                     DEAD cells will become alive
                     <div style={inputWrapperStyle}>
-                        if <input id='d2amin' style={inputStyle} type="number" min="0" max="8"/>
-                        to <input id='d2amax' style={inputStyle} type="number" min="0" max="8"/>
+                        if <input
+                            id='d2amin' style={inputStyle}
+                            type="number" min="0" max="8"/>
+                        to <input
+                            id='d2amax' style={inputStyle}
+                            type="number" min="0" max="8"/>
                         of their neighbours 
                     </div>
                     are ALIVE.

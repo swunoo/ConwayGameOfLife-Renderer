@@ -34,6 +34,8 @@ export default function Cell({ cell_size, bg_color_dead, bg_color_alive, onClick
             }}
         >
 
+            {/* {keyProp} */}
+
         </div>
     )
 }

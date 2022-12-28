@@ -1,10 +1,12 @@
+import { useContext } from 'react';
 import '../../App.css'
 import aboutIcon from '../../images/icon.png';
+import { InGameContext } from '../AppContextProvider';
 
 // Styles
 const ctrlStyle = {
     display: 'flex',
-    flexDirection: 'column' as 'column',
+    flexDirection: 'column',
     alignItems: 'center'
 }
 
@@ -29,20 +31,24 @@ const flex = {
 }
 
 
-// Mock data
-const data = {
-    speed: '5s'
-}
-
 export default function Controls(){
+
+    const { speed, setSpeed } = useContext(InGameContext);
+
     return (
         <section style={ctrlStyle}>
             <div style={flex}>
-                <button style={btnStyle}>
+                <button style={btnStyle} onClick={
+                    () => setSpeed(
+                        n => {
+                            if(n>500) return (n-500)
+                            else if(n > 100) return (n-100)
+                        }
+                    )}>
                     <img src={aboutIcon} alt='Reduce Speed' className='iconImg'/>        
                 </button>
-                <p>Speed: <strong>{data.speed}</strong> per step</p>
-                <button style={btnStyle}>
+                <p>Speed: <strong>{speed}</strong> ms per step</p>
+                <button style={btnStyle} onClick={() => setSpeed(n => n+500)}>
                     <img src={aboutIcon} alt='Increase Speed' className='iconImg'/>        
                 </button>
             </div>

@@ -1,0 +1,52 @@
+.App {
+  max-width: 1100px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+footer {
+  position:absolute;
+  bottom:0;
+  left:0;
+  padding:5px;
+  text-align: center;
+  width:100%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+footer a {
+  color: #ccc;
+  margin: 0 1rem;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+/* StatTable */
+
+.statTable {
+  text-align: left;  
+  width: 100%;
+  line-height: 2rem;
+}
+
+.statTable td {
+  text-align: right;
+}
+
+.statTable tr {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.iconImg {
+  max-width: 25px;
+}

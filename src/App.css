@@ -2,6 +2,11 @@
   max-width: 1100px;
   margin: auto;
   margin-top: 10px;
+
+  --slider-height: 10px;
+  --slider-thumb: 20px;
+  --slider-bg-color: #555;
+  --slider-thumb-color: #eee;
 }
 
 main {
@@ -49,4 +54,42 @@ footer a:hover {
 
 .iconImg {
   max-width: 25px;
+}
+
+/* Panel */
+.notIngamePanelTitle{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+/* The slider */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: var(--slider-height); /* Specified height */
+  background: var(--slider-bg-color); /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: var(--slider-thumb); /* Set a specific slider handle width */
+  height: var(--slider-thumb); /* Slider handle height */
+  background: var(--slider-thumb-color); /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 50%;
+}
+
+.slider::-moz-range-thumb {
+  width: var(--slider-thumb); /* Set a specific slider handle width */
+  height: var(--slider-thumb); /* Slider handle height */
+  background: var(--slider-thumb-color); /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 50%;
 }
